@@ -2,9 +2,10 @@ const countDownElement = document.getElementById('countdown');
 const formElement = document.getElementById('answers-form');
 const messageElement = document.getElementById('message');
 const listElement = document.getElementById('numbers-list');
-let count = 10;
+const inputElement = document.querySelectorAll('.form-control');
+let count = 30;
 const numbers = [];
-
+const correctNumbers = [];
 const countdown = setInterval(() => {
     countDownElement.innerText = count;
     count--;
@@ -16,7 +17,25 @@ const countdown = setInterval(() => {
 }, 1000);
 
 
-function getNumbers() {
+formElement.addEventListener('submit', (e) => {
+    e.preventDefault();
+    checkInputUser();
+});
+
+function checkInputUser() {
+    inputElement.forEach(e => {
+        if (numbers.includes(Number(e.value))) {
+            e.disabled = true;
+            if (!correctNumbers.includes(e.value)) {
+                correctNumbers.push(e.value);
+            }
+        };
+        messageElement.innerText = `Numeri indovinati (${correctNumbers.join(", ")})`;
+    }
+    );
+}
+
+function makeNumbers() {
     for (let i = 0; i < 5; i++) {
         numbers.push(getRndInteger(1, 50));
     }
@@ -25,7 +44,7 @@ function getNumbers() {
 
 const listNumbers = document.createDocumentFragment();
 function createListNumbers() {
-    getNumbers().forEach(e => {
+    makeNumbers().forEach(e => {
         let liElement = document.createElement('li');
         liElement.append(e);
         listNumbers.appendChild(liElement);
