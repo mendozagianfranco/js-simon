@@ -23,9 +23,9 @@ createListNumbers();
 
 // CountDown
 let count = 30;
+countDownElement.innerText = count;
 const countdown = setInterval(() => {
-    countDownElement.innerText = count;
-    count--;
+    countDownElement.innerText = --count;
     if (count === -1) {
         clearInterval(countdown);
         formElement.classList.remove('d-none');
