@@ -3,6 +3,7 @@ const formElement = document.getElementById('answers-form');
 const messageElement = document.getElementById('message');
 const listElement = document.getElementById('numbers-list');
 const inputElement = document.querySelectorAll('.form-control');
+const instructionsElement = document.getElementById('instructions');
 
 const numbers = [];
 const correctNumbers = [];
@@ -30,6 +31,8 @@ const countdown = setInterval(() => {
         clearInterval(countdown);
         formElement.classList.remove('d-none');
         listElement.classList.add('d-none');
+
+        instructionsElement.innerText = 'Inserisci tutti i numeri che ricordi (l\'ordine non è importante)';
     }
 }, 1000);
 
