@@ -26,7 +26,7 @@ let count = 30;
 countDownElement.innerText = count;
 const countdown = setInterval(() => {
     countDownElement.innerText = --count;
-    if (count === -1) {
+    if (count === 0) {
         clearInterval(countdown);
         formElement.classList.remove('d-none');
         listElement.classList.add('d-none');
