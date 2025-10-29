@@ -9,7 +9,6 @@ L’obiettivo è esercitarsi con la manipolazione del DOM, la gestione degli eve
 - Memorizzare sequenze in array e confrontarle con gli input dell’utente  
 - Generare numeri o scelte casuali e gestire il flusso di gioco  
 - Aggiungere feedback visivo per migliorare l’esperienza  
-- Creare una logica che determini il vincitore, il livello corrente e gestisca il riavvio del gioco  
 
 ## Tecnologie utilizzate  
 - HTML5  
